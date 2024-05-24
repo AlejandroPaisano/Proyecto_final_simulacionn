@@ -1,0 +1,796 @@
+[gd_scene load_steps=66 format=3 uid="uid://l6reuu4v0xxx"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_rr7uf"]
+[ext_resource type="PackedScene" uid="uid://drke4rkr8i2ha" path="res://jugador/player.tscn" id="2_kqjnw"]
+[ext_resource type="Texture2D" uid="uid://dmwflkdr1r3qk" path="res://flecha_der.png" id="3_g7gnt"]
+[ext_resource type="Texture2D" uid="uid://c6d434nmkay64" path="res://flecha_izq.png" id="4_18ttg"]
+[ext_resource type="PackedScene" uid="uid://b5c1fdva7n8y" path="res://Estructuras/pared_m.tscn" id="6_03trd"]
+[ext_resource type="Script" path="res://tela_mosquitos.gd" id="6_6ruax"]
+[ext_resource type="PackedScene" uid="uid://dnij6en2uwyss" path="res://Estructuras/regadera.tscn" id="7_3wfs8"]
+[ext_resource type="PackedScene" uid="uid://iajh5gn0jfer" path="res://Estructuras/fregadero.tscn" id="8_gyay1"]
+[ext_resource type="PackedScene" uid="uid://bbbte2g7cw557" path="res://Estructuras/tuberia.tscn" id="9_ccwhb"]
+[ext_resource type="AudioStream" uid="uid://mlu0kry37k1x" path="res://cave_theme_1.wav" id="10_ad44i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6k4x2"]
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mcp6s"]
+albedo_color = Color(0.415686, 0.415686, 0.415686, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wrq6q"]
+material = SubResource("StandardMaterial3D_mcp6s")
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aff41"]
+size = Vector3(0.2, 5, 6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3776u"]
+albedo_color = Color(0.309804, 0.54902, 0.439216, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7b24k"]
+material = SubResource("StandardMaterial3D_3776u")
+size = Vector3(0.2, 5, 6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_n4uup"]
+size = Vector3(4, 0.2, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nfiou"]
+size = Vector3(4, 0.2, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bdrv5"]
+font_size = 40
+font_color = Color(0.372549, 0.733333, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5afce"]
+font_size = 28
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gd4a6"]
+size = Vector3(1.6991, 2.34949, 2.74269)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ugc1v"]
+albedo_color = Color(0.819608, 0.117647, 0.109804, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qeqdv"]
+material = SubResource("StandardMaterial3D_ugc1v")
+size = Vector3(2, 0.01, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhsmc"]
+albedo_color = Color(0.407843, 0.654902, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kfw0a"]
+material = SubResource("StandardMaterial3D_dhsmc")
+top_radius = 1.0
+bottom_radius = 1.0
+height = 2.5
+rings = 5
+cap_top = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_motkg"]
+albedo_color = Color(1, 0.623529, 0.419608, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8alda"]
+material = SubResource("StandardMaterial3D_motkg")
+size = Vector3(30, 0.2, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bnu5e"]
+size = Vector3(30, 0.2, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dhanc"]
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4dgkf"]
+albedo_color = Color(0.223529, 0.384314, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_col7n"]
+material = SubResource("StandardMaterial3D_4dgkf")
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yejpi"]
+albedo_color = Color(1, 0.247059, 0.129412, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kr4w0"]
+material = SubResource("StandardMaterial3D_yejpi")
+flip_faces = true
+bottom_radius = 0.3
+height = 0.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2m8g4"]
+size = Vector3(1, 1.83514, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mn1kd"]
+albedo_color = Color(0.596078, 0.341176, 0.678431, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_v1kdm"]
+material = SubResource("StandardMaterial3D_mn1kd")
+size = Vector3(1, 1.18, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vpsmc"]
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1lg2k"]
+albedo_color = Color(0.85098, 0.835294, 0.439216, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5njs8"]
+material = SubResource("StandardMaterial3D_1lg2k")
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_46yew"]
+size = Vector3(1.02649, 1.13475, 1.01367)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_giyhl"]
+albedo_color = Color(0.235294, 0.329412, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_b8t2n"]
+material = SubResource("StandardMaterial3D_giyhl")
+size = Vector3(0.1, 0.5, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_b4nbl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ih6mg"]
+albedo_color = Color(0.517647, 0.337255, 0.196078, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hip1v"]
+material = SubResource("StandardMaterial3D_ih6mg")
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4cflb"]
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xnu1i"]
+size = Vector3(0.5, 0.443268, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_y05rt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_atei5"]
+albedo_color = Color(0.309804, 0.662745, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pwavq"]
+material = SubResource("StandardMaterial3D_atei5")
+orientation = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sbohv"]
+size = Vector3(0.2, 5, 8.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fvwk"]
+albedo_color = Color(0.921569, 0.717647, 0.682353, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_i47c8"]
+material = SubResource("StandardMaterial3D_7fvwk")
+size = Vector3(0.2, 5, 8.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jw605"]
+material = SubResource("StandardMaterial3D_7fvwk")
+size = Vector3(10.5, 5, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f7pcx"]
+size = Vector3(10.5, 5, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jx1tk"]
+size = Vector3(11.5, 5, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pwhva"]
+material = SubResource("StandardMaterial3D_7fvwk")
+size = Vector3(11.5, 5, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kyhn2"]
+size = Vector3(0.2, 5, 5.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_csa65"]
+material = SubResource("StandardMaterial3D_7fvwk")
+size = Vector3(0.2, 5, 5.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4ahqo"]
+material = SubResource("StandardMaterial3D_7fvwk")
+size = Vector3(9, 5, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_smpt6"]
+size = Vector3(9, 5, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8cl3b"]
+material = SubResource("StandardMaterial3D_7fvwk")
+size = Vector3(0.2, 5, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2wuxf"]
+size = Vector3(0.2, 5, 6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ogv1e"]
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_i6b6c"]
+size = Vector3(30, 0.2, 22)
+
+[node name="main" type="Node3D"]
+script = ExtResource("1_rr7uf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.903335, -0.428882, 0.00673741, 0, 0.0157073, 0.999877, -0.428935, 0.903224, -0.014189, 0, 3.45771, -12.1435)
+light_energy = 1.646
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_6k4x2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_wrq6q")
+
+[node name="Player" parent="." instance=ExtResource("2_kqjnw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.49131, 0)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Avanzar" type="Button" parent="Control" groups=["UI"]]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0555074
+anchor_top = 0.691358
+anchor_right = 0.111882
+anchor_bottom = 0.753086
+offset_right = 15.0
+offset_bottom = 8.0
+action_mode = 0
+text = "Avanzar"
+metadata/_edit_use_anchors_ = true
+
+[node name="Retroceder" type="Button" parent="Control" groups=["UI"]]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0555074
+anchor_top = 0.888889
+anchor_right = 0.117953
+anchor_bottom = 0.950617
+offset_right = 8.0
+offset_bottom = 8.0
+action_mode = 0
+text = "Atras"
+metadata/_edit_use_anchors_ = true
+
+[node name="Giro derecha" type="Button" parent="Control" groups=["UI"]]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.823938
+anchor_top = 0.805556
+anchor_right = 0.866435
+anchor_bottom = 0.878086
+offset_right = 15.0
+offset_bottom = 8.0
+action_mode = 0
+icon = ExtResource("3_g7gnt")
+metadata/_edit_use_anchors_ = true
+
+[node name="Giro izquierda" type="Button" parent="Control" groups=["UI"]]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.915872
+anchor_top = 0.807099
+anchor_right = 0.956635
+anchor_bottom = 0.87963
+offset_right = 8.0
+offset_bottom = 8.0
+action_mode = 0
+icon = ExtResource("4_18ttg")
+metadata/_edit_use_anchors_ = true
+
+[node name="Derecha" type="Button" parent="Control" groups=["UI"]]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111015
+anchor_top = 0.790123
+anchor_right = 0.159584
+anchor_bottom = 0.851852
+offset_right = 8.0
+offset_bottom = 8.0
+action_mode = 0
+text = "Derecha
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Izquierda" type="Button" parent="Control" groups=["UI"]]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.790123
+anchor_right = 0.0485689
+anchor_bottom = 0.851852
+offset_right = 8.0
+offset_bottom = 8.0
+action_mode = 0
+text = "Izquierda"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Control" groups=["UI"]]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.865
+anchor_top = 0.921
+anchor_right = 0.948
+anchor_bottom = 0.991
+offset_left = 0.25
+offset_top = 0.0339966
+offset_right = -0.200073
+offset_bottom = -0.186035
+action_mode = 0
+text = "Interaccion"
+
+[node name="terraza" type="Node3D" parent="."]
+
+[node name="Pared" parent="terraza" instance=ExtResource("6_03trd")]
+
+[node name="Pared2" parent="terraza" instance=ExtResource("6_03trd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.82472, 2.6, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="terraza"]
+transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, 1.71, 2.6, 4.9)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terraza/StaticBody3D"]
+shape = SubResource("BoxShape3D_aff41")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="terraza/StaticBody3D"]
+mesh = SubResource("BoxMesh_7b24k")
+skeleton = NodePath("../..")
+
+[node name="salida" type="Area3D" parent="terraza"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.97304, 0, 6.51773)
+collision_layer = 4
+collision_mask = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="terraza/salida"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00785971)
+mesh = SubResource("BoxMesh_n4uup")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terraza/salida"]
+shape = SubResource("BoxShape3D_nfiou")
+
+[node name="start" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 1.003
+anchor_bottom = 1.0
+offset_right = -3.45605
+
+[node name="Label" type="Label" parent="start"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.406061
+anchor_top = 0.0107858
+anchor_right = 0.596853
+anchor_bottom = 0.0951017
+offset_right = -0.364929
+offset_bottom = 0.278992
+text = "Watersaver"
+label_settings = SubResource("LabelSettings_bdrv5")
+metadata/_edit_use_anchors_ = true
+
+[node name="start" type="Button" parent="start" groups=["Inicio"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45974
+anchor_top = 0.20339
+anchor_right = 0.551866
+anchor_bottom = 0.286888
+offset_right = -0.404999
+offset_bottom = -0.190002
+action_mode = 0
+text = "Iniciar"
+metadata/_edit_use_anchors_ = true
+
+[node name="quit" type="Button" parent="start" groups=["Inicio"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.454563
+anchor_top = 0.399112
+anchor_right = 0.549437
+anchor_bottom = 0.485633
+offset_left = -0.0200195
+offset_top = -0.0240173
+offset_right = 0.399963
+offset_bottom = -0.176025
+action_mode = 0
+text = "Salir"
+metadata/_edit_use_anchors_ = true
+
+[node name="Creditos" type="Button" parent="start" groups=["Inicio"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.458874
+anchor_top = 0.681048
+anchor_right = 0.54945
+anchor_bottom = 0.765733
+offset_right = 0.38501
+offset_bottom = 0.0389404
+action_mode = 0
+text = "Creditos"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="start"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.353247
+anchor_top = 0.348228
+anchor_right = 0.642524
+anchor_bottom = 0.537653
+offset_right = -0.11499
+offset_bottom = 0.0629883
+text = "Realizado por:
+Alejandro Paisano Flores
+Jorge Daray Padilla Perez"
+label_settings = SubResource("LabelSettings_5afce")
+metadata/_edit_use_anchors_ = true
+
+[node name="volver" type="Button" parent="start"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.464069
+anchor_top = 0.901387
+anchor_right = 0.541255
+anchor_bottom = 0.975357
+offset_right = -0.150024
+offset_bottom = -0.00701904
+action_mode = 0
+text = "Volver
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Objetos" type="Node3D" parent="."]
+
+[node name="tela_mosquitos" type="Area3D" parent="Objetos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47644, 0.794803, -4.06531)
+collision_layer = 3
+collision_mask = 2
+script = ExtResource("6_6ruax")
+
+[node name="hitbox" type="CollisionShape3D" parent="Objetos/tela_mosquitos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.224182, 0.674744, 0.442295)
+shape = SubResource("BoxShape3D_gd4a6")
+
+[node name="tela_n" type="MeshInstance3D" parent="Objetos/tela_mosquitos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.667377, 2.25924)
+mesh = SubResource("BoxMesh_qeqdv")
+
+[node name="tela_s" type="MeshInstance3D" parent="Objetos/tela_mosquitos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0218787, 1.81827, 0.174075)
+visible = false
+mesh = SubResource("BoxMesh_qeqdv")
+
+[node name="tambo" type="MeshInstance3D" parent="Objetos/tela_mosquitos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.555197, 0.0999875)
+mesh = SubResource("CylinderMesh_kfw0a")
+
+[node name="Salas" type="Node3D" parent="."]
+
+[node name="Sala" type="Node3D" parent="Salas"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Salas/Sala"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41227, 0, -15.0221)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Salas/Sala/StaticBody3D"]
+mesh = SubResource("BoxMesh_8alda")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Salas/Sala/StaticBody3D"]
+shape = SubResource("BoxShape3D_bnu5e")
+
+[node name="Baño" type="Node3D" parent="Salas"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Salas/Baño"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5637, 0, -14.056)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Salas/Baño/StaticBody3D"]
+shape = SubResource("BoxShape3D_dhanc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Salas/Baño/StaticBody3D"]
+mesh = SubResource("BoxMesh_col7n")
+skeleton = NodePath("../..")
+
+[node name="cubeta" type="Area3D" parent="Salas/Baño"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8671, 0.6, -17.5459)
+collision_layer = 3
+collision_mask = 2
+script = ExtResource("6_6ruax")
+
+[node name="tela_s" type="MeshInstance3D" parent="Salas/Baño/cubeta"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4087, 0, -0.439157)
+visible = false
+mesh = SubResource("CylinderMesh_kr4w0")
+
+[node name="tela_n" type="MeshInstance3D" parent="Salas/Baño/cubeta"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.934644, -0.206593)
+mesh = SubResource("CylinderMesh_kr4w0")
+
+[node name="hitbox" type="CollisionShape3D" parent="Salas/Baño/cubeta"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.417573, -0.194988)
+shape = SubResource("BoxShape3D_2m8g4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Salas/Baño/cubeta"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0899999, -0.206263)
+mesh = SubResource("BoxMesh_v1kdm")
+
+[node name="Pared" parent="Salas/Baño" instance=ExtResource("6_03trd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18.5078, 2.6, -19.2161)
+
+[node name="Pared2" parent="Salas/Baño" instance=ExtResource("6_03trd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5748, 2.6, -14.056)
+
+[node name="Pared3" parent="Salas/Baño" instance=ExtResource("6_03trd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18.5704, 2.6, -8.99629)
+
+[node name="regadera" parent="Salas/Baño" instance=ExtResource("7_3wfs8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.2998, 4.08792, -18.5688)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Salas/Baño"]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -13.6269, 2.6, -16.0614)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Salas/Baño/StaticBody3D2"]
+shape = SubResource("BoxShape3D_aff41")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Salas/Baño/StaticBody3D2"]
+mesh = SubResource("BoxMesh_7b24k")
+skeleton = NodePath("../..")
+
+[node name="Cocina" type="Node3D" parent="Salas"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Salas/Cocina"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.661094, 0, -30.0311)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Salas/Cocina/StaticBody3D"]
+shape = SubResource("BoxShape3D_vpsmc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Salas/Cocina/StaticBody3D"]
+mesh = SubResource("BoxMesh_5njs8")
+
+[node name="Pared" parent="Salas/Cocina" instance=ExtResource("6_03trd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81817, 2.6, -30.0695)
+
+[node name="Pared2" parent="Salas/Cocina" instance=ExtResource("6_03trd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3649, 2.65082, -29.9656)
+
+[node name="Pared3" parent="Salas/Cocina" instance=ExtResource("6_03trd")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.767217, 2.6, -34.9645)
+
+[node name="fregadero" parent="Salas/Cocina" instance=ExtResource("8_gyay1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.59277, 1.4364, -34.2512)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Salas/Cocina"]
+transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, 2.64499, 2.6, -25.125)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Salas/Cocina/StaticBody3D2"]
+shape = SubResource("BoxShape3D_aff41")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Salas/Cocina/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0426593)
+mesh = SubResource("BoxMesh_7b24k")
+skeleton = NodePath("../..")
+
+[node name="tuberia" type="Area3D" parent="Salas/Cocina"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.30155, 1.82378, -32.6685)
+collision_layer = 3
+collision_mask = 2
+script = ExtResource("6_6ruax")
+
+[node name="hitbox" type="CollisionShape3D" parent="Salas/Cocina/tuberia"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.30462, -0.11671, -1.58381)
+shape = SubResource("BoxShape3D_46yew")
+
+[node name="tela_n" type="MeshInstance3D" parent="Salas/Cocina/tuberia"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28862, -0.00244117, -1.50116)
+mesh = SubResource("BoxMesh_b8t2n")
+
+[node name="tela_s" type="MeshInstance3D" parent="Salas/Cocina/tuberia"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.719669, -4.78589)
+visible = false
+mesh = SubResource("BoxMesh_b4nbl")
+
+[node name="patio" type="Node3D" parent="Salas"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Salas/patio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.2669, 0, -15.3316)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Salas/patio/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0829391, 0, 0)
+mesh = SubResource("BoxMesh_hip1v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Salas/patio/StaticBody3D"]
+shape = SubResource("BoxShape3D_4cflb")
+
+[node name="Pared" parent="Salas/patio" instance=ExtResource("6_03trd")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 21.3325, 2.56879, -20.4735)
+
+[node name="Pared2" parent="Salas/patio" instance=ExtResource("6_03trd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.1921, 2.6, -15.318)
+
+[node name="Pared3" parent="Salas/patio" instance=ExtResource("6_03trd")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 21.369, 2.6, -10.3523)
+
+[node name="tuberia" parent="Salas/patio" instance=ExtResource("9_ccwhb")]
+transform = Transform3D(-1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, 25.8245, 1.1, -14.9703)
+
+[node name="tuberia2" type="Area3D" parent="Salas/patio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.083, 0.976943, -16.5418)
+collision_layer = 3
+collision_mask = 2
+script = ExtResource("6_6ruax")
+
+[node name="hitbox" type="CollisionShape3D" parent="Salas/patio/tuberia2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.40967, 0.728002, 1.57859)
+shape = SubResource("BoxShape3D_xnu1i")
+
+[node name="tela_s" type="MeshInstance3D" parent="Salas/patio/tuberia2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.80387, 0, 0)
+mesh = SubResource("BoxMesh_y05rt")
+
+[node name="tela_n" type="MeshInstance3D" parent="Salas/patio/tuberia2"]
+transform = Transform3D(-0.344938, 0, 0, 0, 0.345979, 0, 0, 0, -0.0410346, 2.5401, 0.0493904, 1.55251)
+mesh = SubResource("PlaneMesh_pwavq")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Salas/patio"]
+transform = Transform3D(-1, 0, -1.39091e-08, 0, 1, 0, 1.39091e-08, 0, -1, 16.4972, 2.6, -13.1124)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Salas/patio/StaticBody3D2"]
+shape = SubResource("BoxShape3D_aff41")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Salas/patio/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0468044, 0, 0)
+mesh = SubResource("BoxMesh_7b24k")
+skeleton = NodePath("../..")
+
+[node name="Paredes adicionales" type="Node3D" parent="Salas"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Salas/Paredes adicionales"]
+transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, -9.26598, 2.6, -4.93855)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Salas/Paredes adicionales/StaticBody3D"]
+shape = SubResource("BoxShape3D_sbohv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Salas/Paredes adicionales/StaticBody3D"]
+mesh = SubResource("BoxMesh_i47c8")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Salas/Paredes adicionales"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1351, 2.6, -25.1055)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Salas/Paredes adicionales/StaticBody3D2"]
+mesh = SubResource("BoxMesh_jw605")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Salas/Paredes adicionales/StaticBody3D2"]
+shape = SubResource("BoxShape3D_f7pcx")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Salas/Paredes adicionales"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7656, 2.6, -4.91834)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Salas/Paredes adicionales/StaticBody3D3"]
+shape = SubResource("BoxShape3D_jx1tk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Salas/Paredes adicionales/StaticBody3D3"]
+mesh = SubResource("BoxMesh_pwhva")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Salas/Paredes adicionales"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4268, 2.6, -7.50232)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Salas/Paredes adicionales/StaticBody3D4"]
+shape = SubResource("BoxShape3D_kyhn2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Salas/Paredes adicionales/StaticBody3D4"]
+mesh = SubResource("BoxMesh_csa65")
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="Salas/Paredes adicionales"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6882, 2.6, -6.25811)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Salas/Paredes adicionales/StaticBody3D6"]
+shape = SubResource("BoxShape3D_kyhn2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Salas/Paredes adicionales/StaticBody3D6"]
+mesh = SubResource("BoxMesh_csa65")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="Salas/Paredes adicionales"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4268, 2.6, -23.2171)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Salas/Paredes adicionales/StaticBody3D5"]
+shape = SubResource("BoxShape3D_kyhn2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Salas/Paredes adicionales/StaticBody3D5"]
+mesh = SubResource("BoxMesh_csa65")
+
+[node name="StaticBody3D7" type="StaticBody3D" parent="Salas/Paredes adicionales"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.06634, 2.6, -25.0756)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Salas/Paredes adicionales/StaticBody3D7"]
+mesh = SubResource("BoxMesh_4ahqo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Salas/Paredes adicionales/StaticBody3D7"]
+shape = SubResource("BoxShape3D_smpt6")
+
+[node name="StaticBody3D8" type="StaticBody3D" parent="Salas/Paredes adicionales"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5883, 2.586, -22.3682)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Salas/Paredes adicionales/StaticBody3D8"]
+mesh = SubResource("BoxMesh_8cl3b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Salas/Paredes adicionales/StaticBody3D8"]
+shape = SubResource("BoxShape3D_2wuxf")
+
+[node name="techos" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="techos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0.0302417)
+mesh = SubResource("BoxMesh_ogv1e")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="techos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.532, 5, -14.1787)
+mesh = SubResource("BoxMesh_ogv1e")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="techos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.712387, 5, -30.1062)
+mesh = SubResource("BoxMesh_ogv1e")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="techos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3452, 5, -15.3174)
+mesh = SubResource("BoxMesh_ogv1e")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="techos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28426, 5, -14.31)
+mesh = SubResource("BoxMesh_i6b6c")
+
+[node name="pun" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.1875
+anchor_top = 0.087963
+anchor_right = 0.252
+anchor_bottom = 0.123
+offset_right = 0.500061
+offset_bottom = 0.295998
+text = "Puntaje: "
+metadata/_edit_use_anchors_ = true
+
+[node name="puntaje" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.254451
+anchor_top = 0.093
+anchor_right = 0.286132
+anchor_bottom = 0.134173
+offset_left = -4.12799
+offset_top = 0.736
+offset_right = -3.62399
+offset_bottom = 1.056
+text = "
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="musica" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("10_ad44i")
+autoplay = true
+
+[connection signal="button_up" from="Control/Avanzar" to="Player" method="_on_avanzar_button_up"]
+[connection signal="pressed" from="Control/Avanzar" to="Player" method="_on_avanzar_pressed"]
+[connection signal="button_up" from="Control/Retroceder" to="Player" method="_on_retroceder_button_up"]
+[connection signal="pressed" from="Control/Retroceder" to="Player" method="_on_retroceder_pressed"]
+[connection signal="button_up" from="Control/Giro derecha" to="Player" method="_on_giro_derecha_button_up"]
+[connection signal="pressed" from="Control/Giro derecha" to="Player" method="_on_giro_derecha_pressed"]
+[connection signal="button_up" from="Control/Giro izquierda" to="Player" method="_on_giro_izquierda_button_up"]
+[connection signal="pressed" from="Control/Giro izquierda" to="Player" method="_on_giro_izquierda_pressed"]
+[connection signal="button_up" from="Control/Derecha" to="Player" method="_on_derecha_button_up"]
+[connection signal="pressed" from="Control/Derecha" to="Player" method="_on_derecha_pressed"]
+[connection signal="button_up" from="Control/Izquierda" to="Player" method="_on_izquierda_button_up"]
+[connection signal="pressed" from="Control/Izquierda" to="Player" method="_on_izquierda_pressed"]
+[connection signal="button_down" from="Control/Button" to="Player" method="_on_button_button_down"]
+[connection signal="button_up" from="Control/Button" to="Player" method="_on_button_button_up"]
+[connection signal="area_entered" from="terraza/salida" to="." method="_on_salida_area_entered"]
+[connection signal="body_entered" from="terraza/salida" to="." method="_on_salida_body_entered"]
+[connection signal="pressed" from="start/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="start/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="start/Creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="start/volver" to="." method="_on_volver_pressed"]
+[connection signal="puntos" from="Objetos/tela_mosquitos" to="." method="_on_tela_mosquitos_puntos"]
+[connection signal="puntos" from="Salas/Baño/cubeta" to="." method="_on_cubeta_puntos"]
+[connection signal="puntos" from="Salas/Cocina/tuberia" to="." method="_on_tuberia_puntos"]
+[connection signal="puntos" from="Salas/patio/tuberia2" to="." method="_on_tuberia_2_puntos"]

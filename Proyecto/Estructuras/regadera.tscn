@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnij6en2uwyss"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xt0vr"]
+size = Vector3(0.1, 0.1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_f4gro"]
+size = Vector3(0.1, 0.3, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4i2tx"]
+size = Vector3(1, 0.1, 1)
+
+[node name="regadera" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_xt0vr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.101048, 0.449394)
+mesh = SubResource("BoxMesh_f4gro")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.277488, 0.364834)
+mesh = SubResource("BoxMesh_4i2tx")

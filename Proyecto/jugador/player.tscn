@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://drke4rkr8i2ha"]
+
+[ext_resource type="Script" path="res://jugador/player.gd" id="1_5pyn3"]
+[ext_resource type="Script" path="res://jugador/Mira.gd" id="2_6eosp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wj1su"]
+size = Vector3(0.1, 0.1, 1.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_u3hk1"]
+size = Vector3(0.1, 0.1, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c78qr"]
+size = Vector3(0.5, 1, 0.5)
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_5pyn3")
+
+[node name="CharacterBody3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="CharacterBody3D"]
+
+[node name="Mira" type="Area3D" parent="CharacterBody3D/XRCamera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.59205)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_6eosp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/XRCamera3D/Mira"]
+shape = SubResource("BoxShape3D_wj1su")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/XRCamera3D/Mira"]
+mesh = SubResource("BoxMesh_u3hk1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_c78qr")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.5
+offset_top = -11.5
+offset_right = 19.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="area_entered" from="CharacterBody3D/XRCamera3D/Mira" to="CharacterBody3D/XRCamera3D/Mira" method="_on_area_entered"]
+[connection signal="area_exited" from="CharacterBody3D/XRCamera3D/Mira" to="CharacterBody3D/XRCamera3D/Mira" method="_on_area_exited"]
